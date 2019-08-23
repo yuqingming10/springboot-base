@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>密码</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">0</td>
+            <td th:text="${user.name}">测试</td>
+            <td th:text="${user.age}">10</td>
+            <td th:text="${user.pwd}">0000</td>
+        </tr>
+    </table>
+    <input type="text" v-model="name">
+    <span v-text="name"> </span>年龄 <span v-html="pwd"></span><br/>
+    <input type="checkbox" v-model="language" value="Java" />Java<br/>
+    <input type="checkbox" v-model="language" value="PHP" />PHP<br/>
+    <input type="checkbox" v-model="language" value="Swift" />Swift<br/>
+    <h1>
+        {{language.join(',')}}你选择了：<span v-text="language.join(',')"></span>
+    </h1>
+    <div>
+        <ul>
+            <li v-for="user in users" v-if="user.id !=1">  <!--带数组脚标 <li v-for="(user,index) in users">  -->
+                <span>{{user.name}}-{{user.age}}</span>
+            </li>
+            <!--还可以遍历一个对象各个元素
+            <li v-for="(value, key, index) in user">
+            {{index + 1}}. {{key}} - {{value}}
+        </li>-->
+            <li>
+                <span>{{user.name}}-{{user.age}}</span>
+            </li>
+        </ul>
+    </div>
+    <h1>您的生日是：{{birth}} </h1>
+    <input type="text" v-model="message">
+
+    <div style="padding:5px 0;">{{age}}
+        <a href="#" v-on:click="age++" class="easyui-linkbutton" data-options="iconCls:'icon-add'">Add</a>
+        <a href="#" @click="decrement" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Remove</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cut',disabled:true">Cut</a>
+        <a href="#" class="easyui-linkbutton">Text Button</a>
+    </div>    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">Left</button>
+        <button type="button" class="btn btn-default">Middle</button>
+        <button type="button" class="btn btn-default">Right</button>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="/easyui/demo.css">
+
+
+<script src="/common.js"></script>
+<!--easyui-->
+<!-- jquery核心库 -->
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="/easyui/jquery.min.js"></script>
+<!-- easyui核心库 -->
+<script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+<!-- easyui核心UI文件 css -->
+<link href="/easyui/easyui.css" rel="stylesheet" type="text/css"/>
+<!-- easyui图标 -->
+<link href="/easyui/icon.css" rel="stylesheet" type="text/css"/>
+<!-- easyui国际化文件 -->
+<script type="text/javascript" src="/easyui/easyui-lang-zh_CN.js"></script>
+
+<!--bootstrap-->
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<script src="/bootstrap/js/bootstrap.js"></script>
+
+<!--vue-->
+<script  type="text/javascript"  src="/vue/vue.js" ></script>
+<script  type="text/javascript"  src="/axios/axios.js"></script>
+
+<script type="module" >
+
+    // 创建vue实例
+    var app = new Vue({
+        el:"#app", // el即element，该vue实例要渲染的页面元素
+        data:{ // 渲染页面需要的数据
+            name: "tom",
+            age:10,
+            pwd:"<span style='color:red;'>aaa</span>",
+            language:[],
+            users:[],
+            user:{},
+            birthday:1429032123201, // 毫秒值
+            message:"0",
+        },
+        methods:{
+            decrement(){
+                if(this.age>0){
+                    this.age--;
+                }
+            }
+        },
+        computed: {
+            birth(){// 计算属性本质是一个方法，但是必须返回结果,然后页面渲染时，可以把这个方法birth当成一个变量来使用。
+                const d = new Date(this.birthday);
+                return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDay();
+            }
+        },
+        watch:{//监控一个值的变化。从而做出相应的反应。默认两个参数，新值、旧值
+            message(newVal, oldVal){
+                console.log(newVal, oldVal);
+            }
+        },
+        created:function () {  //钩子函数，有好几种，此处created在创建实例之后进行调用。
+            //ajax然后，绑定数据
+            this.message = 100;
+        }
+        /*components:{    组件，涉及到全局、局部组件，和父、子组件之间数据的相互传递
+            counter:counter //子组件
+        },
+        router 路由涉及到vue-router*/
+    });
+    axios.post("/user/query",{
+        id:"1"
+    })
+        .then(function(resp){
+            // 成功回调函数
+            console.log(resp.data.name);
+            app.users=resp.data;
+        })
+        .catch(function(){
+            // 失败回调函数
+        })
+
+    //get请求也可以/user/getQuery?id=1形式
+    axios.get("/user/getQuery",{
+        params:{
+            id:1,
+            name:"张三",
+        }
+    }) // 请求路径和请求参数拼接
+        .then(function(resp){
+            // 成功回调函数
+            console.log(app.name=resp.data.name);
+            app.user=resp.data;
+        })
+        .catch(function(){
+            // 失败回调函数
+        })
+</script>
+
+</body>
+</html>

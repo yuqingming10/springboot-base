@@ -1,0 +1,274 @@
+2019-08-14 15:16:52.378 ERROR 30848 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'logging.level' to java.util.Map<java.lang.String, java.lang.String>
+	at org.springframework.boot.context.properties.bind.Binder.handleBindError(Binder.java:250) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:226) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:210) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:166) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.setLogLevels(LoggingApplicationListener.java:307) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeFinalLoggingLevels(LoggingApplicationListener.java:290) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:238) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:200) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:173) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:74) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:361) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.yo.yomian.main(yomian.java:15) [classes/:na]
+Caused by: org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, java.lang.String>]
+	at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:321) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:194) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter$CompositeConversionService.convert(BindConverter.java:162) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:96) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:88) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.MapBinder.bindAggregate(MapBinder.java:67) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.AggregateBinder.bind(AggregateBinder.java:58) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.lambda$bindAggregate$2(Binder.java:305) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder$Context.withIncreasedDepth(Binder.java:441) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder$Context.access$100(Binder.java:381) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bindAggregate(Binder.java:304) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:262) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:221) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	... 18 common frames omitted
+
+2019-08-14 15:23:43.147 ERROR 9232 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'logging.level' to java.util.Map<java.lang.String, java.lang.String>
+	at org.springframework.boot.context.properties.bind.Binder.handleBindError(Binder.java:250) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:226) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:210) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:166) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.setLogLevels(LoggingApplicationListener.java:307) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeFinalLoggingLevels(LoggingApplicationListener.java:290) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:238) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:200) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:173) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:74) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:361) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.yo.yomian.main(yomian.java:15) [classes/:na]
+Caused by: org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, java.lang.String>]
+	at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:321) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:194) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter$CompositeConversionService.convert(BindConverter.java:162) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:96) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:88) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.MapBinder.bindAggregate(MapBinder.java:67) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.AggregateBinder.bind(AggregateBinder.java:58) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.lambda$bindAggregate$2(Binder.java:305) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder$Context.withIncreasedDepth(Binder.java:441) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder$Context.access$100(Binder.java:381) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bindAggregate(Binder.java:304) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:262) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:221) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	... 18 common frames omitted
+
+2019-08-14 15:27:46.982  INFO 33396 --- [main] com.yo.yomian                            : Starting yomian on V11PRP1YI1PGU0U with PID 33396 (D:\workspace\workspacemyself\leyoushopping\toppoint\yo-test\target\classes started by Administrator in D:\workspace\workspacemyself\leyoushopping\toppoint)
+2019-08-14 15:27:46.988 DEBUG 33396 --- [main] com.yo.yomian                            : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-08-14 15:27:46.992  INFO 33396 --- [main] com.yo.yomian                            : No active profile set, falling back to default profiles: default
+2019-08-14 15:27:47.134  INFO 33396 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e6ef134: startup date [Wed Aug 14 15:27:47 CST 2019]; root of context hierarchy
+2019-08-14 15:27:48.887  WARN 33396 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'crudUserDao' and 'com.yo.dao.CrudUserDao' mapperInterface. Bean already defined with the same name!
+2019-08-14 15:27:48.888  WARN 33396 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'oldUserDao' and 'com.yo.dao.OldUserDao' mapperInterface. Bean already defined with the same name!
+2019-08-14 15:27:48.888  WARN 33396 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.yo]' package. Please check your configuration.
+2019-08-14 15:27:51.101  INFO 33396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-14 15:27:51.181  INFO 33396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-14 15:27:51.182  INFO 33396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-08-14 15:27:51.201  INFO 33396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8\bin;C:\Program Files\Java\jdk1.8\jre\bin;C:\Program Files\Java\jdk1.8\bin;d:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;D:\tools\apache-maven-3.5.2\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\BypassRuntm;.]
+2019-08-14 15:27:51.552  INFO 33396 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-14 15:27:51.553  INFO 33396 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4419 ms
+2019-08-14 15:27:51.746  INFO 33396 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-14 15:27:51.757  INFO 33396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-14 15:27:51.758  INFO 33396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-14 15:27:51.758  INFO 33396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-14 15:27:51.758  INFO 33396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-14 15:27:53.048  INFO 33396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:27:53.440  INFO 33396 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e6ef134: startup date [Wed Aug 14 15:27:47 CST 2019]; root of context hierarchy
+2019-08-14 15:27:53.569  INFO 33396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/getQuery]}" onto public com.yo.pojo.User com.yo.controller.firstController.getQuery(java.lang.String,java.lang.String)
+2019-08-14 15:27:53.571  INFO 33396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/query]}" onto public com.yo.pojo.User com.yo.controller.firstController.queryUser(com.yo.pojo.User)
+2019-08-14 15:27:53.572  INFO 33396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/oldQuery]}" onto public java.lang.String com.yo.controller.firstController.oldQueryUser(org.springframework.ui.ModelMap)
+2019-08-14 15:27:53.577  INFO 33396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-14 15:27:53.579  INFO 33396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-14 15:27:53.655  INFO 33396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:27:53.656  INFO 33396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:27:53.800  WARN 33396 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-14 15:27:54.472  INFO 33396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-14 15:27:54.475  INFO 33396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-08-14 15:27:54.484  INFO 33396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-08-14 15:27:54.550  INFO 33396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-14 15:27:54.557  INFO 33396 --- [main] com.yo.yomian                            : Started yomian in 8.774 seconds (JVM running for 9.745)
+2019-08-14 15:28:02.037  INFO 33396 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-14 15:28:02.038  INFO 33396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-14 15:28:02.085  INFO 33396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 46 ms
+2019-08-14 15:28:02.207  INFO 33396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-14 15:28:02.215  WARN 33396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-08-14 15:28:02.638  INFO 33396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-14 15:28:02.647 DEBUG 33396 --- [http-nio-8080-exec-1] com.yo.dao.OldUserDao.oldQueryUser       : ==>  Preparing: SELECT * from USER 
+2019-08-14 15:28:02.727 DEBUG 33396 --- [http-nio-8080-exec-1] com.yo.dao.OldUserDao.oldQueryUser       : ==> Parameters: 
+2019-08-14 15:28:02.795 DEBUG 33396 --- [http-nio-8080-exec-1] com.yo.dao.OldUserDao.oldQueryUser       : <==      Total: 3
+2019-08-14 15:28:02.803  INFO 33396 --- [http-nio-8080-exec-1] com.yo.controller.firstController        : oldQueryUser方法[User{id=1, name='张三', age=30, pwd='333'}, User{id=2, name='李四', age=24, pwd='444'}, User{id=3, name='王五', age=25, pwd='555'}]
+2019-08-14 15:28:03.743 DEBUG 33396 --- [http-nio-8080-exec-2] com.yo.dao.CrudUserDao.select            : ==>  Preparing: SELECT id,name,age,pwd FROM user WHERE id = ? 
+2019-08-14 15:28:03.744 DEBUG 33396 --- [http-nio-8080-exec-2] com.yo.dao.CrudUserDao.select            : ==> Parameters: 1(Integer)
+2019-08-14 15:28:03.748 DEBUG 33396 --- [http-nio-8080-exec-2] com.yo.dao.CrudUserDao.select            : <==      Total: 1
+2019-08-14 15:28:03.749  INFO 33396 --- [http-nio-8080-exec-2] com.yo.controller.firstController        : queryUser方法getUser{id=1, name='张三', age=30, pwd='333'}
+2019-08-14 15:28:12.932  WARN 33396 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.yo.pojo.User com.yo.controller.firstController.queryUser(com.yo.pojo.User)
+2019-08-14 15:28:16.392 DEBUG 33396 --- [http-nio-8080-exec-6] com.yo.dao.OldUserDao.oldQueryUser       : ==>  Preparing: SELECT * from USER 
+2019-08-14 15:28:16.392 DEBUG 33396 --- [http-nio-8080-exec-6] com.yo.dao.OldUserDao.oldQueryUser       : ==> Parameters: 
+2019-08-14 15:28:16.393 DEBUG 33396 --- [http-nio-8080-exec-6] com.yo.dao.OldUserDao.oldQueryUser       : <==      Total: 3
+2019-08-14 15:28:16.394  INFO 33396 --- [http-nio-8080-exec-6] com.yo.controller.firstController        : oldQueryUser方法[User{id=1, name='张三', age=30, pwd='333'}, User{id=2, name='李四', age=24, pwd='444'}, User{id=3, name='王五', age=25, pwd='555'}]
+2019-08-14 15:28:16.528 DEBUG 33396 --- [http-nio-8080-exec-8] com.yo.dao.CrudUserDao.select            : ==>  Preparing: SELECT id,name,age,pwd FROM user WHERE id = ? 
+2019-08-14 15:28:16.529 DEBUG 33396 --- [http-nio-8080-exec-8] com.yo.dao.CrudUserDao.select            : ==> Parameters: 1(Integer)
+2019-08-14 15:28:16.535 DEBUG 33396 --- [http-nio-8080-exec-8] com.yo.dao.CrudUserDao.select            : <==      Total: 1
+2019-08-14 15:28:16.536  INFO 33396 --- [http-nio-8080-exec-8] com.yo.controller.firstController        : queryUser方法getUser{id=1, name='张三', age=30, pwd='333'}
+2019-08-14 15:30:09.914  INFO 34156 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@554e218: startup date [Wed Aug 14 15:30:09 CST 2019]; root of context hierarchy
+2019-08-14 15:30:11.634  WARN 34156 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'crudUserDao' and 'com.yo.dao.CrudUserDao' mapperInterface. Bean already defined with the same name!
+2019-08-14 15:30:11.635  WARN 34156 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'oldUserDao' and 'com.yo.dao.OldUserDao' mapperInterface. Bean already defined with the same name!
+2019-08-14 15:30:11.635  WARN 34156 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.yo]' package. Please check your configuration.
+2019-08-14 15:30:13.473  INFO 34156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-14 15:30:13.531  INFO 34156 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-14 15:30:13.532  INFO 34156 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-08-14 15:30:13.552  INFO 34156 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8\bin;C:\Program Files\Java\jdk1.8\jre\bin;C:\Program Files\Java\jdk1.8\bin;d:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;D:\tools\apache-maven-3.5.2\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\BypassRuntm;.]
+2019-08-14 15:30:13.793  INFO 34156 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-14 15:30:13.793  INFO 34156 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3879 ms
+2019-08-14 15:30:13.936  INFO 34156 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-14 15:30:13.943  INFO 34156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-14 15:30:13.944  INFO 34156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-14 15:30:13.945  INFO 34156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-14 15:30:13.945  INFO 34156 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-14 15:30:15.023  INFO 34156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:30:15.359  INFO 34156 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@554e218: startup date [Wed Aug 14 15:30:09 CST 2019]; root of context hierarchy
+2019-08-14 15:30:15.490  INFO 34156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/getQuery]}" onto public com.yo.pojo.User com.yo.controller.firstController.getQuery(java.lang.String,java.lang.String)
+2019-08-14 15:30:15.491  INFO 34156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/query]}" onto public com.yo.pojo.User com.yo.controller.firstController.queryUser(com.yo.pojo.User)
+2019-08-14 15:30:15.492  INFO 34156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/oldQuery]}" onto public java.lang.String com.yo.controller.firstController.oldQueryUser(org.springframework.ui.ModelMap)
+2019-08-14 15:30:15.496  INFO 34156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-14 15:30:15.498  INFO 34156 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-14 15:30:15.553  INFO 34156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:30:15.554  INFO 34156 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:30:15.695  WARN 34156 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-14 15:30:16.261  INFO 34156 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-14 15:30:16.263  INFO 34156 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-08-14 15:30:16.273  INFO 34156 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-08-14 15:30:16.348  INFO 34156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-14 15:30:17.945  INFO 34156 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-14 15:30:17.946  INFO 34156 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-14 15:30:17.972  INFO 34156 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2019-08-14 15:30:18.067  INFO 34156 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-14 15:30:18.075  WARN 34156 --- [http-nio-8080-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-08-14 15:30:18.310  INFO 34156 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-14 15:31:12.078  INFO 32840 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7d446ed1: startup date [Wed Aug 14 15:31:12 CST 2019]; root of context hierarchy
+2019-08-14 15:31:13.644  WARN 32840 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'crudUserDao' and 'com.yo.dao.CrudUserDao' mapperInterface. Bean already defined with the same name!
+2019-08-14 15:31:13.644  WARN 32840 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'oldUserDao' and 'com.yo.dao.OldUserDao' mapperInterface. Bean already defined with the same name!
+2019-08-14 15:31:13.644  WARN 32840 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.yo]' package. Please check your configuration.
+2019-08-14 15:31:15.513  INFO 32840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-14 15:31:15.566  INFO 32840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-14 15:31:15.566  INFO 32840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-08-14 15:31:15.582  INFO 32840 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8\bin;C:\Program Files\Java\jdk1.8\jre\bin;C:\Program Files\Java\jdk1.8\bin;d:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;D:\tools\apache-maven-3.5.2\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\BypassRuntm;.]
+2019-08-14 15:31:15.779  INFO 32840 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-14 15:31:15.779  INFO 32840 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3701 ms
+2019-08-14 15:31:15.907  INFO 32840 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-14 15:31:15.914  INFO 32840 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-14 15:31:15.915  INFO 32840 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-14 15:31:15.915  INFO 32840 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-14 15:31:15.915  INFO 32840 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-14 15:31:17.058  INFO 32840 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:31:17.382  INFO 32840 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7d446ed1: startup date [Wed Aug 14 15:31:12 CST 2019]; root of context hierarchy
+2019-08-14 15:31:17.525  INFO 32840 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/getQuery]}" onto public com.yo.pojo.User com.yo.controller.firstController.getQuery(java.lang.String,java.lang.String)
+2019-08-14 15:31:17.527  INFO 32840 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/query]}" onto public com.yo.pojo.User com.yo.controller.firstController.queryUser(com.yo.pojo.User)
+2019-08-14 15:31:17.527  INFO 32840 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/oldQuery]}" onto public java.lang.String com.yo.controller.firstController.oldQueryUser(org.springframework.ui.ModelMap)
+2019-08-14 15:31:17.532  INFO 32840 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-14 15:31:17.533  INFO 32840 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-14 15:31:17.619  INFO 32840 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:31:17.620  INFO 32840 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 15:31:17.768  WARN 32840 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-14 15:31:18.368  INFO 32840 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-14 15:31:18.371  INFO 32840 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-08-14 15:31:18.380  INFO 32840 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-08-14 15:31:18.459  INFO 32840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-14 15:31:21.725  INFO 32840 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-14 15:31:21.726  INFO 32840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-14 15:31:21.774  INFO 32840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 47 ms
+2019-08-14 15:31:21.869  INFO 32840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-14 15:31:21.877  WARN 32840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-08-14 15:31:22.153  INFO 32840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019/08/14-15:51 [main] INFO  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext- Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@457c9034: startup date [Wed Aug 14 15:51:00 CST 2019]; root of context hierarchy
+2019/08/14-15:51 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner- Skipping MapperFactoryBean with name 'crudUserDao' and 'com.yo.dao.CrudUserDao' mapperInterface. Bean already defined with the same name!
+2019/08/14-15:51 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner- Skipping MapperFactoryBean with name 'oldUserDao' and 'com.yo.dao.OldUserDao' mapperInterface. Bean already defined with the same name!
+2019/08/14-15:51 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner- No MyBatis mapper was found in '[com.yo]' package. Please check your configuration.
+2019/08/14-15:51 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/08/14-15:51 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/08/14-15:51 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/8.5.32
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8\bin;C:\Program Files\Java\jdk1.8\jre\bin;C:\Program Files\Java\jdk1.8\bin;d:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;D:\tools\apache-maven-3.5.2\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\BypassRuntm;.]
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 4371 ms
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Servlet dispatcherServlet mapped to [/]
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019/08/14-15:51 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@457c9034: startup date [Wed Aug 14 15:51:00 CST 2019]; root of context hierarchy
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/getQuery]}" onto public com.yo.pojo.User com.yo.controller.firstController.getQuery(java.lang.String,java.lang.String)
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/query]}" onto public com.yo.pojo.User com.yo.controller.firstController.queryUser(com.yo.pojo.User)
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/oldQuery]}" onto public java.lang.String com.yo.controller.firstController.oldQueryUser(org.springframework.ui.ModelMap)
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/08/14-15:51 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/08/14-15:51 [main] WARN  org.thymeleaf.templatemode.TemplateMode- [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019/08/14-15:51 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2019/08/14-15:51 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Bean with name 'dataSource' has been autodetected for JMX exposure
+2019/08/14-15:51 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019/08/14-15:51 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/08/14-15:51 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019/08/14-15:51 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization started
+2019/08/14-15:51 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization completed in 38 ms
+2019/08/14-15:51 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource- HikariPool-1 - Starting...
+2019/08/14-15:51 [http-nio-8080-exec-2] WARN  com.zaxxer.hikari.util.DriverDataSource- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019/08/14-15:51 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource- HikariPool-1 - Start completed.
+2019/08/14-15:53 [main] INFO  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext- Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@50de186c: startup date [Wed Aug 14 15:53:29 CST 2019]; root of context hierarchy
+2019/08/14-15:53 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner- Skipping MapperFactoryBean with name 'crudUserDao' and 'com.yo.dao.CrudUserDao' mapperInterface. Bean already defined with the same name!
+2019/08/14-15:53 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner- Skipping MapperFactoryBean with name 'oldUserDao' and 'com.yo.dao.OldUserDao' mapperInterface. Bean already defined with the same name!
+2019/08/14-15:53 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner- No MyBatis mapper was found in '[com.yo]' package. Please check your configuration.
+2019/08/14-15:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8080 (http)
+2019/08/14-15:53 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/08/14-15:53 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/8.5.32
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8\bin;C:\Program Files\Java\jdk1.8\jre\bin;C:\Program Files\Java\jdk1.8\bin;d:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;D:\tools\apache-maven-3.5.2\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\BypassRuntm;.]
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 4050 ms
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Servlet dispatcherServlet mapped to [/]
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019/08/14-15:53 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@50de186c: startup date [Wed Aug 14 15:53:29 CST 2019]; root of context hierarchy
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/getQuery]}" onto public com.yo.pojo.User com.yo.controller.firstController.getQuery(java.lang.String,java.lang.String)
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/query]}" onto public com.yo.pojo.User com.yo.controller.firstController.queryUser(com.yo.pojo.User)
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/oldQuery]}" onto public java.lang.String com.yo.controller.firstController.oldQueryUser(org.springframework.ui.ModelMap)
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/08/14-15:53 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/08/14-15:53 [main] WARN  org.thymeleaf.templatemode.TemplateMode- [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019/08/14-15:53 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2019/08/14-15:53 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Bean with name 'dataSource' has been autodetected for JMX exposure
+2019/08/14-15:53 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019/08/14-15:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8080 (http) with context path ''
+2019/08/14-15:53 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019/08/14-15:53 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization started
+2019/08/14-15:53 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+2019/08/14-15:53 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource- HikariPool-1 - Starting...
+2019/08/14-15:53 [http-nio-8080-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019/08/14-15:53 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource- HikariPool-1 - Start completed.

@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/dbtest?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver  #默认的就是mysql驱动所以此句可以不写
+    hikari:
+      idle-timeout: 60000
+      maximum-pool-size: 30
+      minimum-idle: 10
+    #开发时关闭缓存,不然没法看到实时页面
+  thymeleaf:
+    cache: false  #清除缓存，实现热部署。也就是修改了html后不用重启  要ctrl+F9重新build一下程序，
+    mode: LEGACYHTML5
+mybatis:
+  type-aliases-package: com.yo.pojo
+  mapper-locations: classpath:mappers/*.xml #针对的是用xml方式的。
+logging: #默认使用LogBack日志系统,slf4j日志 。对于feign组件的日志有不同，请看具体笔记
+  level:
+    com.yo: error  #要写上包名才可以
+  #file: yo-test.log #默认名称：spring.log
+  path: /home #默认是项目的根目录下，  和上一个file参数这两个配置不能同时生效
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
+    file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
